@@ -11,7 +11,7 @@ jobs:
       - name: Send message
         uses: thollander/actions-comment-pull-request@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_SERVERCOW }}
           message: |
                    Thanks for contributing!
                    
