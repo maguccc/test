@@ -16,7 +16,7 @@ jobs:
       - name: Mark/Close Stale Issues and Pull Requests 🗑️
         uses: actions/stale@v4
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.STALE }}
           days-before-stale: 1
           days-before-close: 1
           stale-issue-message: >
