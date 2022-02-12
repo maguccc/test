@@ -60,8 +60,7 @@ body:
              | Docker-Compose Version (`docker-compose version`) | I_DO_REPLY_HERE |
              | Reverse proxy (custom solution) | I_DO_REPLY_HERE |
              
-             Output of `git diff origin/master`, any other changes to the code? If so, **please post them**.
-
+             Output of `git diff origin/master`, any other changes to the code? If so, **please post them**:
              ```
              YOUR OUTPUT GOES HERE
              ```
