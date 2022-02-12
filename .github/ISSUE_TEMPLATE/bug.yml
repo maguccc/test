@@ -1,62 +1,70 @@
 name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+description: Report a bug
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-  - type: textarea
-    id: what-happened
-    attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
   - type: checkboxes
-    id: terms
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      label: Contribution guidelines
+      description: Please read the contribution guidelines before proceeding.
       options:
-        - label: I agree to follow this project's Code of Conduct
+        - label: I've read the [contribution guidelines](https://github.com/mailcow/mailcow-dockerized/blob/master/CONTRIBUTING.md) and wholeheartedly agree
           required: true
+  - type: checkboxes
+    attributes:
+      label: I've found a bug and checked that ...
+      description: Prior to placing the issue, please check following:** *(fill out each checkbox with an `X` once done)*
+      options:
+      - label: ... I understand that not following the below instructions will result in immediate closure and/or deletion of my issue.
+        required: true
+      - label: ... I have understood that this bug report is dedicated for bugs, and not for support-related inquiries.
+        required: true
+      - label: ... I have understood that answers are voluntary and community-driven, and not commercial support.
+        required: true
+      - label: ... I have verified that my issue has not been already answered in the past. I also checked previous [issues](https://github.com/mailcow/mailcow-dockerized/issues).
+        required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Please provide a brief description of the bug in 1-2 sentences. If applicable, add screenshots to help explain your problem. Very useful for bugs in mailcow UI.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs
+      description: Please take a look at the [official documentation](https://mailcow.github.io/mailcow-dockerized-docs/debug-logs/) and post the last few lines of logs, when the error occurs. For example, docker container logs of affected containers. This will be automatically formatted into code, so no need for backticks.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Please describe the steps to reproduce the bug. Screenshots can be added, if helpful.
+      placeholder: |-
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: System information
+      description: In this stage we would kindly ask you to attach general system information about your setup.
+      value: |-
+             | Question | Answer |
+             | --- | --- |
+             | My operating system | I_DO_REPLY_HERE |
+             | Is Apparmor, SELinux or similar active? | I_DO_REPLY_HERE |
+             | Virtualization technlogy (KVM, VMware, Xen, etc - **LXC and OpenVZ are not supported** | I_DO_REPLY_HERE |
+             | Server/VM specifications (Memory, CPU Cores) | I_DO_REPLY_HERE |
+             | Docker Version (`docker version`) | I_DO_REPLY_HERE |
+             | Docker-Compose Version (`docker-compose version`) | I_DO_REPLY_HERE |
+             | Reverse proxy (custom solution) | I_DO_REPLY_HERE |
+             
+             Output of `git diff origin/master`, any other changes to the code? If so, **please post them**.
+             ```
+             ```
+             All third-party firewalls and custom iptables rules are unsupported. **Please check the Docker docs about how to use Docker with your own ruleset**. Nevertheless, iptabels output can help us to help you: 
+             `iptables -L -vn`, `ip6tables -L -vn`, `iptables -L -vn -t nat` and `ip6tables -L -vn -t nat`.
+             DNS problems? Please run `docker exec -it $(docker ps -qf name=acme-mailcow) dig +short stackoverflow.com @172.22.1.254` (set the IP accordingly, if you changed the internal mailcow network) and post the output.
+
+    validations:
+      required: true
