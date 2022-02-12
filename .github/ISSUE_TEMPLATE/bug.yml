@@ -1,5 +1,6 @@
 name: Bug Report
 description: Report a bug
+label: bug
 body:
   - type: checkboxes
     attributes:
@@ -60,11 +61,35 @@ body:
              | Reverse proxy (custom solution) | I_DO_REPLY_HERE |
              
              Output of `git diff origin/master`, any other changes to the code? If so, **please post them**.
-             ```
-             ```
-             All third-party firewalls and custom iptables rules are unsupported. **Please check the Docker docs about how to use Docker with your own ruleset**. Nevertheless, iptabels output can help us to help you: 
-             `iptables -L -vn`, `ip6tables -L -vn`, `iptables -L -vn -t nat` and `ip6tables -L -vn -t nat`.
-             DNS problems? Please run `docker exec -it $(docker ps -qf name=acme-mailcow) dig +short stackoverflow.com @172.22.1.254` (set the IP accordingly, if you changed the internal mailcow network) and post the output.
 
+             ```
+             YOUR OUTPUT GOES HERE
+             ```
+             
+             All third-party firewalls and custom iptables rules are unsupported. **Please check the Docker docs about how to use Docker with your own ruleset**. Nevertheless, iptabels output can help us to help you:
+             iptables -L -vn:
+             ```
+             YOUR OUTPUT GOES HERE
+             ```
+             
+             ip6tables -L -vn:
+             ```
+             YOUR OUTPUT GOES HERE
+             ```
+             
+             iptables -L -vn -t nat:
+             ```
+             YOUR OUTPUT GOES HERE
+             ```
+          
+             ip6tables -L -vn -t nat:
+             ```
+             YOUR OUTPUT GOES HERE
+             ```
+             
+             DNS problems? Please run `docker exec -it $(docker ps -qf name=acme-mailcow) dig +short stackoverflow.com @172.22.1.254` (set the IP accordingly, if you changed the internal mailcow network) and post the output:
+             ```
+             YOUR OUTPUT GOES HERE
+             ```
     validations:
       required: true
