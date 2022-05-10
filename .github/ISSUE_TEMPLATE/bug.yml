@@ -58,7 +58,7 @@ body:
              | Server/VM specifications (Memory, CPU Cores) | I_DO_REPLY_HERE |
              | Docker version (`docker version`) | I_DO_REPLY_HERE |
              | docker-compose version (`docker-compose version`) | I_DO_REPLY_HERE |
-             | mailcow version (```git describe --tags `git rev-list --tags --max-count=1` ```) | I_DO_REPLY_HERE |
+             | mailcow version (```git describe --tags `git rev-list --tags --max-count=1````) | I_DO_REPLY_HERE |
              | Reverse proxy (custom solution) | I_DO_REPLY_HERE |
 
              Output of `git diff origin/master`, any other changes to the code? If so, **please post them**:
