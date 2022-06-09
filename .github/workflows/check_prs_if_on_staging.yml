@@ -2,6 +2,7 @@ name: Check PRs if on staging
 on: 
     pull_request_target:
       types: [opened, edited]
+permissions: {}
       
 jobs:
   is_not_staging:
