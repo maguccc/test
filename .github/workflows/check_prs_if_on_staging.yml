@@ -17,7 +17,7 @@ jobs:
                    Thanks for contributing!
                    
                    I noticed that you didn't select `staging` as your base branch. Please change the base branch to `staging`.
-                   See the attached picture to change the base branch:
+                   See the attached picture on how to change the base branch to `staging`:
                    
                    ![check_prs_if_on_staging.png](https://raw.githubusercontent.com/MAGICCC/test/master/check_prs_if_on_staging.png)
                    
