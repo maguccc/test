@@ -22,7 +22,6 @@ jobs:
                    ![check_prs_if_on_staging.png](https://raw.githubusercontent.com/MAGICCC/test/master/check_prs_if_on_staging.png)
                    
       - name: Fail # we want to see failed checks in the PR
-        if: ${{ success() }}
         run: exit 1
     
   is_staging:
